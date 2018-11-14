@@ -11,16 +11,15 @@ phone app only when necessary. In this case when octahedron has a new stable pos
 
 Cube.apk can be downloaded from http://cloud.greencurrent.com/Cube.apk
 
-It's rather large
-Kyse on aika simppelistä, ehkä enemmän demosta, toteutuksesta jota 
-tarkoituksenani on laajentaa eteenpäin.
-Mutta saattaisi jo sellaisenaan olla hauska messudemo esim...
+It's rather large because it was made with ReactNative. Hopefully that means that
+we'll have a iOS version in near future.
 
-Eli moduuli itsessään tunnistaan yhden kahdeksasta asennosta. ( Tulevaisuudessa ehkä kuudesta, eli arpakuutiona!! ). Tein tulostettavan PDF-tiedoston josta voi askarrella 8-kulmion jonka keskelle Movesense-sensori kiinnitetään. Kuutiosta tulee jo ihan toimiva perus laser paperilla. Tarra-arkille tulostaminen helpottaa jo jäykkyytensä takia kasaamista, ja liimaelementit tulee automaattisesti mukana. Läpinäkyvä kalvo saattaisi olla myös kätevä, silloin sensori näkyisi hyvin sisältä.
+## Octahedron
 
-Lisukkeena on Android Appi joka osaa avata moduulin tarjoaman palvelun. Eli ilman isompia konffauksia näyttää ylöspäin olevan sivun numeron.
+Idea is that you program a movesense sensor with this module and place it inside
+octahedron. You can make your own octahedron from http://cloud.greencurrent.com/Cube.pdf
 
-Tarkoituksenani on lisätä mahdollisuus konffata joka sivuun lähetettävä MQTT-viesti. Tällöin 8-kulmiota voisi käyttää esim. kotiautomaatiojärjestelmän ohjauksessa. Asettaa esim. kotona/poissa tilan tai sytyttää/sammuttaa halutun valon. Vain mielikuvitus on rajana.
+## Future
 
-Tosin tuossa käytössä isoin este on MSD-kirjaston puuttuminen Linux-ympäristöstä. Android puhelimella voi vain demota ei tehdä pysyvämpää asennusta johtuen Androidista.
-
+You can connect Cube to MQTT-server and configure different message for each side and
+control "something" by just turning cube to correct side.
