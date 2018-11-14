@@ -1,8 +1,6 @@
 # movesense-cube-module
 Detect octahedrons upmost side. Movesense Launchable module
 
-## Being translated
-
 This is simple demo of howto make a Movesense launchable module. Also 
 demonstrates benefits of processing measurements on sensor and notifying
 phone app only when necessary. In this case when octahedron has a new stable position.
