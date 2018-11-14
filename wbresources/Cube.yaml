@@ -1,0 +1,119 @@
+# This file defines Suunto Whiteboard API for Movesense Hackathon 2016 sample
+#
+swagger: '2.0'
+
+# Document metadata
+info:
+  version: "0.0.0"
+  title: Green Current Cube state API
+  description: |
+    This file defines API for Green Current Cube service
+
+    See http://greencurrent.com/Cube for more information.
+  termsOfService: http://suunto.com/wbapi/terms/
+  contact:
+    name: Juha Okkonen
+    url: http://greencurrent.com
+
+# Paths
+paths:
+  /Gc/Cube/Position:
+    get:
+      description: |
+        Get current position
+      responses:
+        200:
+          schema:
+              description: Current detected position
+              type: integer
+              format: uint16
+
+        204:
+          description: Measurement source is unavailable
+
+  /Gc/Cube/Position/Subscription:
+    post:
+      description: |
+        Subscribe to position change notify.
+        See documentation on product-specific measurement periods at
+        http://XXX.suunto.com/XXX. If measurement source is unavailable, the
+        Measurement member will be empty. If present, Measurement member
+        contains single measurement result.
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#subscribe
+        x-notification:
+          schema:
+              description: Current position after recent change
+              type: integer
+              format: uint16
+    delete:
+      description: |
+        Unsubscribe from position change updates
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#unsubscribe
+
+  /Gc/Cube/LastJumpHeight:
+    get:
+      description: |
+        Get a Data value.
+      responses:
+        200:
+          schema:
+              description: Last jump height in meters
+              type: number
+              format: float
+              x-unit: m
+        204:
+          description: Measurement source is unavailable
+
+  /Gc/Cube/LastJumpHeight/Subscription:
+    post:
+      description: |
+        Subscribe to periodic Data values.
+        See documentation on product-specific measurement periods at
+        http://XXX.suunto.com/XXX. If measurement source is unavailable, the
+        Measurement member will be empty. If present, Measurement member
+        contains single measurement result.
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#subscribe
+        x-notification:
+          schema:
+              description: Last jump height in meters
+              type: number
+              format: float
+              x-unit: m
+    delete:
+      description: |
+        Unsubscribe from jump height updates.
+      responses:
+        200:
+          description: Operation completed successfully
+        x-std-errors:
+          description: See common error codes http://developer.suunto.com/api/std-errors#unsubscribe
+
+
+definitions:
+  CubeInfo:
+    required:
+      - RelativeTime
+      - Value
+    properties:
+      RelativeTime:
+        description: Relative time position change
+        type: integer
+        format: uint32
+        x-unit: millisecond
+      Value:
+        description: Last jump height in meters
+        type: number
+        format: float
+        x-unit: m
