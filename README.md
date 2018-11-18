@@ -5,6 +5,9 @@ This is simple demo of howto make a Movesense launchable module. Also
 demonstrates benefits of processing measurements on sensor and notifying
 phone app only when necessary. In this case when octahedron has a new stable position.
 
+## movesense-cube-demo-app
+Easiest way to test this module.
+
 ## Android app
 
 Cube.apk can be downloaded from http://cloud.greencurrent.com/Cube.apk
