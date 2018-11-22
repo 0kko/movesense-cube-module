@@ -1,5 +1,5 @@
 #include "CubeService.h"
-#include "app-resources/resources.h"
+#include "modules-resources/resources.h"
 #include "common/core/debug.h"
 #include "common/core/dbgassert.h"
 #include "meas_acc/resources.h"
